@@ -10,18 +10,6 @@ sigma_hlim = 1400; % [N/mm^2]
 sigma_FE = 700;    % [N/mm^2]
 sigma_02 = 590;    % [N/mm^2]
 
-K_Halpha = 1.8;
-K_V = K_Halpha;
-K_Hbeta = K_Halpha;
-K_Falpha = K_Halpha;
-K_Fbeta = K_Halpha;
-
-% Zähnezahlen
-
-z1 = 21;
-z2 = 69;
-i_ist = z2/z1
-delta_i = ((i_ist-i)/i)*100
 n_an = i*n_ab_nenn
 omega_nenn = 2*pi*n_an
 Mt_an = P_an_nenn/omega_nenn
@@ -61,3 +49,16 @@ p = 3; % Wälzlager
 N_0L = L_h_nenn;
 kbl_zwischen = ((Mt_i(1)/Mt_an)^p*(delta_N(1)/N_0L)) + ((Mt_i(2)/Mt_an)^p*(delta_N(2)/N_0L)) + ((Mt_i(3)/Mt_an)^p*(delta_N(3)/N_0L));
 K_BL = nthroot(kbl_zwischen, p)
+
+% Zähnezahlen
+
+z1 = 27;
+z2 = 88;
+i_ist = z2/z1
+delta_i = ((i_ist-i)/i)*100
+
+M_t1_eq = Mt_an*K_B
+
+K_ABF = 1; % aus Aufgabenstellung
+K_Fbeta = 1.5; % aus Aufgabenstellung
+Y_FS = 0; % aus Aufgabenstellung
